@@ -24,7 +24,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import Container from '@material-ui/core/Container';
 
-import { selectedGifImage} from "../Redux/ReduxActions";
+import { updateGifbuData} from "../Redux/ReduxActions";
 
 import image1 from '../Gifs/1.gif';
 import image2 from '../Gifs/2.gif';
@@ -150,8 +150,10 @@ export class GifList extends Component {
     }
 
     onClickImage =(e)=>{
-        this.props.selectedGifImage(e.currentTarget.currentSrc);
-        this.props.close();
+        let GifBu = {...this.props.GifBu};
+        GifBu.ImagePath = e.target.src;
+        this.props.updateGifbuData(GifBu);
+        this.props.close(); 
     }
 
     render() {
@@ -185,13 +187,15 @@ export class GifList extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    
-})
+const mapStateToProps = (state) => {
+    return {
+        GifBu : state.Gifbu
+    };
+}
 
 function mapDispatchToProps(dispatch) {
     return {
-        selectedGifImage: gifImage => dispatch(selectedGifImage(gifImage))
+        updateGifbuData: gifbu => dispatch(updateGifbuData(gifbu))
     };
 }
 

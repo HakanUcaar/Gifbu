@@ -15,10 +15,18 @@
             menu :"",
             backgroundColor: customTitlebar.Color.fromHex('#444'),
             shadow: true,
-            icon: './icon.svg'
+            icon: './catpurple.ico'
         });
 
-        MyTitleBar.updateTitle('Giftbu');
+        MyTitleBar.updateTitle('Giftbu');        
+        if(window.location.search === "?viewA") MyTitleBar.dispose();
+
+        const { ipcRenderer } = require('electron')
+        // ipcRenderer.on('asynchronous-reply', (event, arg) => {
+        //   console.log(arg) // prints "pong"
+        // })
+        ipcRenderer.send('asynchronous-message', 'ping');
+   
     </script>    
   </body>
 </html>

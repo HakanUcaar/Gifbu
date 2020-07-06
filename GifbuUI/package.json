@@ -1,6 +1,6 @@
 {
-  "name": "electron-react-boilerplate",
-  "version": "0.1.0",
+  "name": "GifBu",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.10.2",
@@ -10,18 +10,22 @@
     "@testing-library/user-event": "^7.1.2",
     "acorn": "^7.1.1",
     "cross-env": "^6.0.3",
+    "crypto-js": "^4.0.0",
     "custom-electron-titlebar": "^3.2.2-hotfix62",
-    "electron": "^7.1.9",
-    "electron-builder": "^22.2.0",
+    "electron-edge-js": "^12.14.2",
     "electron-is-dev": "^1.1.0",
     "kind-of": "^6.0.3",
     "minimist": "^1.2.5",
+    "notistack": "^0.9.17",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.3.0",
     "redux": "^4.0.5",
-    "wait-on": "^3.3.0"
+    "uuid": "^8.1.0",
+    "wait-on": "^3.3.0",
+    "ws": "^7.3.0"
   },
   "scripts": {
     "react-start": "react-scripts start",
@@ -50,18 +54,19 @@
   },
   "main": "public/electron.js",
   "homepage": "./",
-  "description": "React Electron Test3",
+  "description": "Gifbu",
   "author": "Hakan UÇAR",
   "build": {
-    "appId": "EFatura Görüntüleyicisi",
+    "appId": "Gifbu",
     "win": {
       "target": [
-        "portable",
-        "nsis"
+        "portable"
       ]
     }
   },
   "devDependencies": {
-    "concurrently": "^5.0.2"
+    "concurrently": "^5.0.2",
+    "electron": "^7.1.9",
+    "electron-builder": "^22.2.0"
   }
 }
