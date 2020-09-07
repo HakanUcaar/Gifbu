@@ -14,7 +14,7 @@ class ViewManager extends Component {
     static View(props) {
         let name = props.location.search.substr(1);
         let view = ViewManager.Views()[name];
-        if (view == undefined)
+        if (view === undefined)
             return ViewManager.Views()["main"]
         if(view == null) 
             throw new Error("View " + name + " is undefined");
